@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RomanNumeralConverter;
+using System;
 
 namespace RomanNumeralTests
 {
@@ -173,6 +174,13 @@ namespace RomanNumeralTests
             string expected = "XXXIX";
             string actual = NumberConverter.ConvertFromNumber(39);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void NumberOver39ThrowsExecption()
+        {
+            NumberConverter.ConvertFromNumber(40);
         }
 
 
