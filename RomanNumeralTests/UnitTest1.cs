@@ -177,10 +177,106 @@ namespace RomanNumeralTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void NumberOver39ThrowsExecption()
+        public void NumberFortyWillProduceXL()
         {
-            NumberConverter.ConvertFromNumber(40);
+            string expected = "XL";
+            string actual = NumberConverter.ConvertFromNumber(40);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberFortyEightWillProduceXLVIII()
+        {
+            string expected = "XLVIII";
+            string actual = NumberConverter.ConvertFromNumber(48);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberFortyNineWillProduceXLIX()
+        {
+            string expected = "XLIX";
+            string actual = NumberConverter.ConvertFromNumber(49);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberFiftyWillProduceL()
+        {
+            string expected = "L";
+            string actual = NumberConverter.ConvertFromNumber(50);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberSeventyFourWillProduceLXXIV()
+        {
+            string expected = "LXXIV";
+            string actual = NumberConverter.ConvertFromNumber(74);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberOneHundredWillProduceC()
+        {
+            string expected = "C";
+            string actual = NumberConverter.ConvertFromNumber(100);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberThreeHundredAndThirtyThreeWillProduceCCCXXXIII()
+        {
+            string expected = "CCCXXXIII";
+            string actual = NumberConverter.ConvertFromNumber(333);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberThreeHundredAndSixtyNineWillProduceCCCLXIX()
+        {
+            string expected = "CCCLXIX";
+            string actual = NumberConverter.ConvertFromNumber(369);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberFourHundredNinetyNineWillProduceCDXCIX()
+        {
+            string expected = "CDXCIX";
+            string actual = NumberConverter.ConvertFromNumber(499);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberSixHundredEightySevenWillProduceDCLXXXVII()
+        {
+            string expected = "DCLXXXVII";
+            string actual = NumberConverter.ConvertFromNumber(687);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberNineteenEightyFourWillProduceMCMLXXXIV()
+        {
+            string expected = "MCMLXXXIV";
+            string actual = NumberConverter.ConvertFromNumber(1984);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NumberTwentyNineteenWillProduceMMXIX()
+        {
+            string expected = "MMXIX";
+            string actual = NumberConverter.ConvertFromNumber(2019);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void NumberOver300ThrowsExecption()
+        {
+            NumberConverter.ConvertFromNumber(3001);
         }
 
 
